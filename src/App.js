@@ -15,10 +15,11 @@ class App extends React.Component {
 
   handlePlusClick = () => {
     if (this.state.count < 100) {
-    this.setState({ count: this.state.count + 1 })
-    if( this.state.count === this.state.countBis){
-      this.setState({ countBis: this.state.countBis + 1 })
-    }}
+      this.setState({ count: this.state.count + 1 })
+      if( this.state.count === this.state.countBis){
+        this.setState({ countBis: this.state.countBis + 1 })
+      }
+    }
   }
   
   handleMoinsClick = () => {
@@ -29,24 +30,25 @@ class App extends React.Component {
 
   handlePlusClickBis = () => {
     if (this.state.countBis < 100) {
-    this.setState({ countBis: this.state.countBis + 10 })
-  }}
+      this.setState({ countBis: this.state.countBis + 1 })
+    }
+  }
 
   handleMoinsClickBis = () => {
     if (this.state.countBis > 0) {
       this.setState({ countBis: this.state.countBis - 1 })
-    
-    if( this.state.count === this.state.countBis){
-      this.setState({ count: this.state.count - 1 })
-    }}
+      if( this.state.count === this.state.countBis){
+        this.setState({ count: this.state.count - 1 })
+      }
+    }
   }
   
    render() {
    return (
-      <div>
+      <div className="container">
         <h1>Counter</h1>
-         <Counter count={this.state.count} substract={this.handleMoinsClick} increment={this.handlePlusClick} 
-         countBis={this.state.countBis} substractBis={this.handleMoinsClickBis} incrementBis={this.handlePlusClickBis} />
+         <Counter count={this.state.count} substract={this.handleMoinsClick} increment={this.handlePlusClick} />
+         <Counter countBis={this.state.countBis} substract={this.handleMoinsClickBis} increment={this.handlePlusClickBis} />
       </div>
     )
   }
